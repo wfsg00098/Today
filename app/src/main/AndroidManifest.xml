@@ -16,6 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity_progress_zhu"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:label="hot主程序" />
+        <activity
+            android:name=".activity_campus1"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:label="翡翠湖校区" />
+        <activity
+            android:name=".activity_campus2"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:label="屯溪路校区" />
+        <activity
+            android:name=".activity_campus3"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:label="宣城校区" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
