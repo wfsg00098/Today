@@ -1,26 +1,53 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
+
+    ext {
+        /*sdk and version*/
+        compile_sdk_version = 28
+        min_sdk_version = 24
+        target_sdk_version = 27
+        constraint_version = '1.1.0'
+        version_code = 221
+        version_name = '2.2.1'
+
+        /*support*/
+        android_support = '28.0.0'
+
+
+        signConfigs = [
+                storeFilePath: "zxing.jks",
+                storePwd     : "123456",
+                keyAlias     : "zxingyzq",
+                keypwd       : "123456"
+        ]
+
+    }
+
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        
 
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
 allprojects {
+
+    group "yuZhiQiang"
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
