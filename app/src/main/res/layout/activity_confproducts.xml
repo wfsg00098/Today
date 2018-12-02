@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--确认订单界面布局-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eat.today.Choices"
+    android:orientation="vertical"
+    android:background="@color/grayPrimary">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_conf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:title="确认订单"
+        app:titleTextColor="#FFFFFF"
+        android:background="@color/colorPrimary">
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+
+        <ListView
+            android:id="@+id/list_conf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_pay"
+            android:layout_alignParentRight="true"
+            android:background="#e8692c"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="付款"
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/txt_sum_conf"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/btn_pay"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:paddingBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="30sp"
+            android:textColor="@color/redPrimary"/>
+
+        <TextView
+            android:id="@+id/txt_heji_conf"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/txt_sum_conf"
+            android:gravity="bottom"
+            android:paddingBottom="15dp"
+            android:layout_marginRight="10dp"
+            android:text="合计:"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+
+    </RelativeLayout>
+</LinearLayout>
