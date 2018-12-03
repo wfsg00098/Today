@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eat.today">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".MainActivity_progress_zhu"
             android:icon="@drawable/ic_launcher_foreground"
@@ -32,7 +27,20 @@
             android:name=".activity_campus3"
             android:icon="@drawable/ic_launcher_foreground"
             android:label="宣城校区" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Choices" />
+        <activity android:name=".ConfProducts" />
+        <activity android:name=".erweima" />
+        <activity android:name=".navigate" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SubmitFailed" />
+        <activity android:name=".SubmitSuccess" />
+        <activity android:name="com.yzq.zxinglibrary.android.CaptureActivity" />
     </application>
 
 </manifest>
