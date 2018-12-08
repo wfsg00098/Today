@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--选菜界面布局-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.eat.today.Choices"
     android:orientation="vertical"
     android:background="@color/grayPrimary">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title="X食堂"
-        app:titleTextColor="#FFFFFF"
-        android:background="@color/colorPrimary">
-    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,31 +30,52 @@
             />
 
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <ImageView
             android:id="@+id/img_shopping"
-            android:layout_height="match_parent"
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="63dp"
+            android:layout_marginLeft="127dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="45dp"
+            android:layout_toEndOf="@+id/hotmap"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:layout_marginRight="45dp"
-            android:src="@mipmap/shopping"
-            />
+            android:src="@mipmap/shopping" />
+
+        <ImageView
+            android:id="@+id/hotmap"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:src="@android:drawable/ic_menu_info_details" />
+
         <TextView
             android:id="@+id/txt_heji"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
             android:layout_toRightOf="@id/img_shopping"
             android:gravity="bottom"
             android:paddingBottom="15dp"
-            android:layout_marginRight="10dp"
             android:text="合计:"
             android:textColor="@color/black"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
+
         <TextView
             android:id="@+id/txt_sum"
             android:layout_width="wrap_content"
@@ -71,8 +84,9 @@
             android:gravity="bottom"
             android:paddingBottom="10dp"
             android:text="￥0"
-            android:textSize="30sp"
-            android:textColor="@color/redPrimary"/>
+            android:textColor="@color/redPrimary"
+            android:textSize="30sp" />
+
         <Button
             android:id="@+id/btn_conf"
             android:layout_width="wrap_content"
@@ -82,7 +96,7 @@
             android:gravity="center"
             android:paddingLeft="5dp"
             android:text="结算"
-            android:textSize="20sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="20sp" />
     </RelativeLayout>
 </LinearLayout>

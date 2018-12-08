@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--确认订单界面布局-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.eat.today.Choices"
     android:orientation="vertical"
     android:background="@color/grayPrimary">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_conf"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        app:title="确认订单"
-        app:titleTextColor="#FFFFFF"
-        android:background="@color/colorPrimary">
-    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
