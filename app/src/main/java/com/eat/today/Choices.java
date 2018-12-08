@@ -1,13 +1,12 @@
 package com.eat.today;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Choices extends AppCompatActivity {
+public class Choices extends Activity {
 
     public static final int COUNT_CHANGED=1;
     private List<Dish> dish_list = new ArrayList<Dish>();
@@ -47,9 +46,14 @@ public class Choices extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_choices);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_normal);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("X食堂");
+
+        findViewById(R.id.hotmap).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Choices.this,MainActivity_progress_zhu.class));
+            }
+        });
 
         initDish();
 
