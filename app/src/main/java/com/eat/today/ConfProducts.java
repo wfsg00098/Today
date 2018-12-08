@@ -1,9 +1,8 @@
 package com.eat.today;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConfProducts extends AppCompatActivity{
+public class ConfProducts extends Activity {
     private List<Dish> dish_list = new ArrayList<Dish>();
     private List<Dish> vega_list = new ArrayList<Dish>();
     private List<Dish> meat_list = new ArrayList<Dish>();
@@ -36,9 +35,7 @@ public class ConfProducts extends AppCompatActivity{
         Intent intent = this.getIntent();
         dish_list=(List<Dish>) intent.getSerializableExtra("dish");
 
-        Toolbar toolbar = findViewById(R.id.toolbar_conf);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("确认订单");
 
         ListView listView = findViewById(R.id.list_conf);
         ConfDishAdapter adapter = new ConfDishAdapter(ConfProducts.this,
@@ -162,6 +159,7 @@ public class ConfProducts extends AppCompatActivity{
                     if(connection!=null){
                         connection.disconnect();
                     }
+                    finish();
                 }
             }
         }).start();

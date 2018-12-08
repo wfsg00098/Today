@@ -1,13 +1,12 @@
 package com.eat.today;
-import android .app.Activity;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -21,19 +20,17 @@ import com.yanzhenjie.permission.Action;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.Permission;
 import com.yzq.zxinglibrary.android.CaptureActivity;
-import com.yzq.zxinglibrary.bean.ZxingConfig;
 import com.yzq.zxinglibrary.common.Constant;
 import com.yzq.zxinglibrary.encode.CodeCreator;
 
 import java.util.List;
-public class erweima extends AppCompatActivity implements View.OnClickListener {
+public class erweima extends Activity implements View.OnClickListener {
 
     private Button scanBtn;
     private TextView result;
     private EditText contentEt;
     private Button encodeBtn;
     private ImageView contentIv;
-    private Toolbar toolbar;
     private int REQUEST_CODE_SCAN = 111;
     /**
      * 生成带logo的二维码
@@ -68,14 +65,10 @@ public class erweima extends AppCompatActivity implements View.OnClickListener {
         /*生成的图片*/
         contentIv = findViewById(R.id.contentIv);
 
-        toolbar = findViewById(R.id.toolbar);
 
-        toolbar.setTitle("扫一扫");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("扫一扫");
 
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         result = (TextView) findViewById(R.id.result);
         scanBtn = (Button) findViewById(R.id.scanBtn);
         contentEt = (EditText) findViewById(R.id.contentEt);

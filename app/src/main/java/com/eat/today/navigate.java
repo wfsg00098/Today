@@ -1,6 +1,6 @@
 package com.eat.today;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 
-public class navigate extends AppCompatActivity{
+public class navigate extends Activity {
 }

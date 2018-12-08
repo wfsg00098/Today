@@ -1,11 +1,10 @@
 package com.eat.today;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -24,7 +23,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public class activity_campus1 extends AppCompatActivity {
+public class activity_campus1 extends Activity {
 
     private ProgressBar ProgressBar1;
     private ProgressBar ProgressBar2;
@@ -53,7 +52,7 @@ public class activity_campus1 extends AppCompatActivity {
     private String regEx = "[^0-9]";
 
     private ImageButton Refresh;
-    private ImageButton Navigate;
+    //private ImageButton Navigate;
 
     public void send() {
         String target = "https://today.guaiqihen.com/get_hot.php";//在这里填写服务器该模块提交的目标地址
@@ -142,7 +141,7 @@ public class activity_campus1 extends AppCompatActivity {
         ProgressBar7 = findViewById(R.id.progressBar7);
         ProgressBar8 = findViewById(R.id.progressBar8);
         Refresh = findViewById(R.id.RefreshButton);
-        Navigate = findViewById(R.id.guild_Button);
+        //Navigate = findViewById(R.id.guild_Button);
 
 
         Refresh.setOnClickListener(new View.OnClickListener() {
@@ -158,7 +157,7 @@ public class activity_campus1 extends AppCompatActivity {
                 }).start();
             }
         });
-
+        /*
         Navigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,7 +168,7 @@ public class activity_campus1 extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-
+        */
         mHander1 = new Handler() {
             @Override
             public void handleMessage(Message msg) {

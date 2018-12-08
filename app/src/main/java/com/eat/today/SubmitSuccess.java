@@ -1,14 +1,19 @@
 package com.eat.today;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SubmitSuccess extends AppCompatActivity {
+import com.google.zxing.WriterException;
+import com.yzq.zxinglibrary.encode.CodeCreator;
+
+public class SubmitSuccess extends Activity {
 
     private String order_id;
     private TextView txt_orderID;
@@ -23,9 +28,7 @@ public class SubmitSuccess extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent();
-                intent1.setClass(SubmitSuccess.this,MainActivity.class);
-                startActivity(intent1);
+                finish();
             }
         });
         updateUI();
@@ -41,6 +44,14 @@ public class SubmitSuccess extends AppCompatActivity {
                         txt_orderID = findViewById(R.id.txt_orderID);
                         txt_orderID.setText("订单号："+order_id);
                         txt_orderID.setTextColor(Color.BLACK);
+                        try {
+                            Bitmap bitmap = CodeCreator.createQRCode(order_id,400,400,null);
+                            ImageView img = findViewById(R.id.success_qr);
+                            img.setImageBitmap(bitmap);
+                        } catch (WriterException e) {
+                            e.printStackTrace();
+                        }
+
                     }
                 });
             }
