@@ -3,6 +3,7 @@
     package="com.eat.today">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Cateen" />
         <activity
             android:name=".MainActivity_progress_zhu"
             android:icon="@drawable/ic_launcher_foreground"
@@ -31,7 +32,9 @@
         <activity android:name=".ConfProducts" />
         <activity android:name=".erweima" />
         <activity android:name=".navigate" />
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,6 +44,7 @@
         <activity android:name=".SubmitFailed" />
         <activity android:name=".SubmitSuccess" />
         <activity android:name="com.yzq.zxinglibrary.android.CaptureActivity" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

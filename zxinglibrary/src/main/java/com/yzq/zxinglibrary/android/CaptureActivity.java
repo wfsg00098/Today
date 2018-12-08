@@ -104,7 +104,7 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback,
             config = new ZxingConfig();
         }
 
-
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_capture);
 
 
