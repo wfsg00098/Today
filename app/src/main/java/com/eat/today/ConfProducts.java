@@ -85,6 +85,7 @@ public class ConfProducts extends Activity {
         }).start();
     }
 
+    //add some test
     private void sendRequestHttpURLConnection(){                                                    //
         new Thread(new Runnable() {
             @Override
