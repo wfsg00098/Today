@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Register"></activity>
+        <activity android:name=".Login" />
         <activity android:name=".Cateen" />
         <activity
             android:name=".MainActivity_progress_zhu"
@@ -44,7 +46,7 @@
         <activity android:name=".SubmitFailed" />
         <activity android:name=".SubmitSuccess" />
         <activity android:name="com.yzq.zxinglibrary.android.CaptureActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
