@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".Cateen" />
         <activity
@@ -32,6 +32,8 @@
             android:label="宣城校区" />
         <activity android:name=".Choices" />
         <activity android:name=".ConfProducts" />
+        <activity android:name=".Comment" />
+        <activity android:name=".Tab_AddActivity"/>
         <activity android:name=".erweima" />
         <activity android:name=".navigate" />
         <activity

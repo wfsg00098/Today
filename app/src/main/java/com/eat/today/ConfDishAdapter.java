@@ -33,12 +33,13 @@ public class ConfDishAdapter extends ArrayAdapter<Dish> {
         View view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
         if(converView == null) {
             Dish dish = getItem(position);
-            ImageView dish_img = view.findViewById(R.id.dish_img_conf);
+            mImageView dish_img = view.findViewById(R.id.dish_img_conf);
             TextView dish_name = view.findViewById(R.id.dish_name_conf);
             TextView dish_price = view.findViewById(R.id.dish_price_conf);
             TextView dish_count = view.findViewById(R.id.txt_count_conf);
             // TextView dish_info = view.findViewById(R.id.dish_info);
-            dish_img.setImageResource(dish.getImgId());  
+            //dish_img.setImageResource(dish.getImgId());
+            dish_img.setImageURL(dish.getImgUrl());
             dish_name.setText(dish.getName());
             dish_price.setText("¥" + dish.getPrice()*dish.getCount());
             dish_price.setTextColor(Color.parseColor("#d61919"));

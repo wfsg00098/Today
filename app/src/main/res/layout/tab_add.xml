@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#15b5e9" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:paddingLeft="7dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="发表动态"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:id="@+id/iv_publish"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="7dp"
+            android:src="@drawable/publish" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etAddContent"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:background="@null"
+        android:hint="说点什么..."
+        android:padding="7dp"
+        android:singleLine="false" />
+
+</LinearLayout>
