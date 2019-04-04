@@ -1,13 +1,10 @@
 package com.eat.today;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.StrictMode;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,11 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class Tab_AddActivity extends Activity {
@@ -98,7 +91,9 @@ public class Tab_AddActivity extends Activity {
                                 json.put("dish","1");
                                 json.put("message", content);
                                 DataOutputStream out = new DataOutputStream(connection.getOutputStream());
-                                out.writeBytes(json.toString());
+                                //out.writeBytes(json.toString());
+                                out.write(json.toString().getBytes());
+                                Log.e("fjdakljfla", json.toString());
                                 if (connection.getResponseCode() == 200) {
                                     InputStream in = connection.getInputStream();
                                     reader = new BufferedReader(new InputStreamReader(in));
@@ -147,6 +142,7 @@ public class Tab_AddActivity extends Activity {
             }
         }
     };
+
 
     private void initView() {
         ivPublish = (ImageView) findViewById(R.id.iv_publish);
