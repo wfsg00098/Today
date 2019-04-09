@@ -24,17 +24,18 @@ import java.util.List;
 
 public class ConfProducts extends Activity {
     private List<Dish> dish_list = new ArrayList<Dish>();
-    private List<Dish> vega_list = new ArrayList<Dish>();
-    private List<Dish> meat_list = new ArrayList<Dish>();
-    private String username = "Example";                                                            //用户名
+    // private List<Dish> vega_list = new ArrayList<Dish>();
+    // private List<Dish> meat_list = new ArrayList<Dish>();
+    private String username = GlobalSettings.username;
+    private int canteenId ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confproducts);
-        //initDish();
+
         Intent intent = this.getIntent();
         dish_list=(List<Dish>) intent.getSerializableExtra("dish");
-
+        canteenId = intent.getIntExtra("canteenId",0);
         setTitle("确认订单");
 
         ListView listView = findViewById(R.id.list_conf);
@@ -43,10 +44,10 @@ public class ConfProducts extends Activity {
         listView.setAdapter(adapter);
 
         Button btn_pay = findViewById(R.id.btn_pay);
+        
         btn_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("Click", "onClick!!!!!!!!!!!!!!!!!!!!!!!!! ");
                 sendRequestHttpURLConnection();
             }
         });
@@ -101,12 +102,17 @@ public class ConfProducts extends Activity {
                     connection.connect();
                     JSONObject json=new JSONObject();
                     json.put("username",username);
-                    json.put("canteen","1");
-                    json.put("count","2");
-                    json.put("id1","xxx");
-                    json.put("count1","x");
-                    json.put("id2","xxx");
-                    json.put("count2","x");
+                    json.put("canteen",String.valueOf(canteenId));
+                    int count=0;
+                    Dish dish;
+                    for (int i = 0;i<dish_list.size();i++)
+                    {
+                        dish = dish_list.get(i);
+                        count = count + dish.getCount();
+                        json.put("id"+(i+1),dish.getId());
+                        json.put("count"+(i+1),dish.getCount());
+                    }
+                    json.put("count",count);
 
                     DataOutputStream out = new DataOutputStream(connection.getOutputStream());
                     out.writeBytes(json.toString());

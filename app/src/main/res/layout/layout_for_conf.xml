@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@color/grayPrimary">
 
-    <ImageView
+    <com.eat.today.mImageView
         android:id="@+id/dish_img_conf"
         android:layout_width="80dp"
         android:layout_height="80dp"

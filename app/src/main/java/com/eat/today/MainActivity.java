@@ -45,5 +45,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.button2).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Login.class)));
         findViewById(R.id.button4).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Choices.class)));
         findViewById(R.id.button5).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Cateen.class)));
+        findViewById(R.id.button6).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Calorie.class)));
+        findViewById(R.id.button7).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Recommend.class)));
     }
 }
