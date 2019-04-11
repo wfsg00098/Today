@@ -66,6 +66,11 @@ public class Cateen extends Activity {
                 String content = data.getStringExtra(Constant.CODED_CONTENT);
                 TextView tv = findViewById(R.id.textView);
                 tv.setText("订单ID：" + content);
+
+                Intent intent = new Intent();
+                intent.setClass(Cateen.this,CanteenShowOrders.class);
+                intent.putExtra("orderId",content);
+                startActivity(intent);
             }
         }
     }
