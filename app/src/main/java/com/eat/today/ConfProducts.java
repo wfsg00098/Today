@@ -24,8 +24,6 @@ import java.util.List;
 
 public class ConfProducts extends Activity {
     private List<Dish> dish_list = new ArrayList<Dish>();
-    // private List<Dish> vega_list = new ArrayList<Dish>();
-    // private List<Dish> meat_list = new ArrayList<Dish>();
     private String username = GlobalSettings.username;
     private int canteenId ;
     @Override
@@ -44,7 +42,7 @@ public class ConfProducts extends Activity {
         listView.setAdapter(adapter);
 
         Button btn_pay = findViewById(R.id.btn_pay);
-        
+
         btn_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,19 +101,18 @@ public class ConfProducts extends Activity {
                     JSONObject json=new JSONObject();
                     json.put("username",username);
                     json.put("canteen",String.valueOf(canteenId));
-                    int count=0;
                     Dish dish;
                     for (int i = 0;i<dish_list.size();i++)
                     {
                         dish = dish_list.get(i);
-                        count = count + dish.getCount();
                         json.put("id"+(i+1),dish.getId());
                         json.put("count"+(i+1),dish.getCount());
                     }
-                    json.put("count",count);
+                    json.put("count",dish_list.size());
 
                     DataOutputStream out = new DataOutputStream(connection.getOutputStream());
                     out.writeBytes(json.toString());
+                    Log.e("json信息",json.toString());
                     if(connection.getResponseCode()==200){
                         InputStream in = connection.getInputStream();
                         reader = new BufferedReader(new InputStreamReader(in));
@@ -126,7 +123,6 @@ public class ConfProducts extends Activity {
                         }
                         JSONObject json_res = new JSONObject(response.toString());
                         String status = json_res.getString("status");
-                        Log.e("!!!!!!!!!!!!!!!!!!!!!", status);
                         if(status.equals("success"))
                         {
                             String order_id = json_res.getString("order_id");
@@ -138,7 +134,6 @@ public class ConfProducts extends Activity {
                         else
                         {
                             str_temp = "提交失败，请重试。";
-                            Log.e("Click", "onClick????????????????????????????? ");
                             Intent intent=new Intent();
                             intent.setClass(ConfProducts.this,SubmitFailed.class);
                             startActivity(intent);
@@ -153,7 +148,7 @@ public class ConfProducts extends Activity {
 
                 }catch(Exception e){
                     e.printStackTrace();
-                    Log.e("TAG","Exception!!!"+ Log.getStackTraceString(e));
+                    Log.e("Failed","Exception!!!"+ Log.getStackTraceString(e));
                 }finally {
                     if(reader!=null){
                         try{
