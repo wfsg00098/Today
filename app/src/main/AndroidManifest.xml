@@ -18,6 +18,7 @@
         <activity android:name=".Calorie" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
+        <activity android:name=".CanteenShowOrders"/>
         <activity android:name=".Cateen" />
         <activity
             android:name=".MainActivity_progress_zhu"
