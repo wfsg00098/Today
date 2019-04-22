@@ -7,6 +7,17 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +25,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a057e6b8f16f6f832b3eb8c0aa7875b2" />
+        <service android:name="com.amap.api.location.APSService"></service>
         <activity android:name=".Recommend"></activity>
         <activity android:name=".Calorie" />
         <activity android:name=".Register" />
@@ -42,6 +57,7 @@
         <activity android:name=".Tab_AddActivity" />
         <activity android:name=".erweima" />
         <activity android:name=".navigate" />
+        <activity android:name=".RouteNaviActivity"/>
         <activity
             android:name=".SplashActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">

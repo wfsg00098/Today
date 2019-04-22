@@ -10,4 +10,6 @@
     <color name="grayPrimaryDark">#f1f1f1</color>
     <color name="textGray">#222323</color>
     <color name="grayLight">#dbdcdc</color>
+    <color name="fill">#3376d4f3</color>
+    <color name="stroke">#cc3f91fc</color>
 </resources>
