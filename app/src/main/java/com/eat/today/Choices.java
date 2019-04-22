@@ -268,6 +268,9 @@ public class Choices extends Activity {
                             if (count == 0) {
                                 conf_dish.clear();
                                 dish_list.clear();
+                                hot_list.clear();
+                                meat_list.clear();
+                                vega_list.clear();
                                 Message msg = new Message();
                                 msg.what = TOAST_DISPLAY;
                                 handler.sendMessage(msg);
