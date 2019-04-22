@@ -2,6 +2,7 @@ package com.eat.today;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -52,7 +53,7 @@ public class activity_campus1 extends Activity {
     private String regEx = "[^0-9]";
 
     private ImageButton Refresh;
-    //private ImageButton Navigate;
+    private ImageButton Navigate;
 
     public void send() {
         String target = "https://today.guaiqihen.com/get_hot.php";//在这里填写服务器该模块提交的目标地址
@@ -141,7 +142,7 @@ public class activity_campus1 extends Activity {
         ProgressBar7 = findViewById(R.id.progressBar7);
         ProgressBar8 = findViewById(R.id.progressBar8);
         Refresh = findViewById(R.id.RefreshButton);
-        //Navigate = findViewById(R.id.guild_Button);
+        Navigate = findViewById(R.id.build_Button);
 
 
         Refresh.setOnClickListener(new View.OnClickListener() {
@@ -150,14 +151,14 @@ public class activity_campus1 extends Activity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                       send();
-                       Message m = mHander1.obtainMessage();
-                       mHander1.sendMessage(m);
+                        send();
+                        Message m = mHander1.obtainMessage();
+                        mHander1.sendMessage(m);
                     }
                 }).start();
             }
         });
-        /*
+
         Navigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,18 +169,18 @@ public class activity_campus1 extends Activity {
                 startActivity(intent1);
             }
         });
-        */
+
         mHander1 = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-                    ProgressBar1.setProgress(ratios[0]);
-                    ProgressBar2.setProgress(ratios[1]);
-                    ProgressBar3.setProgress(ratios[2]);
-                    ProgressBar4.setProgress(ratios[3]);
-                    ProgressBar5.setProgress(ratios[4]);
-                    ProgressBar6.setProgress(ratios[5]);
-                    ProgressBar7.setProgress(ratios[6]);
-                    ProgressBar8.setProgress(ratios[7]);
+                ProgressBar1.setProgress(ratios[0]);
+                ProgressBar2.setProgress(ratios[1]);
+                ProgressBar3.setProgress(ratios[2]);
+                ProgressBar4.setProgress(ratios[3]);
+                ProgressBar5.setProgress(ratios[4]);
+                ProgressBar6.setProgress(ratios[5]);
+                ProgressBar7.setProgress(ratios[6]);
+                ProgressBar8.setProgress(ratios[7]);
                 super.handleMessage(msg);
             }
 
